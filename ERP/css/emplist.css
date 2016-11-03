@@ -1,0 +1,52 @@
+table{
+		background: #008000;
+		margin: auto;
+		margin-top: 20px;
+}
+table tr{
+	padding: 10px;
+	background: #D8D8D8;
+}
+tr td{
+	padding: 10px;
+	
+}
+h2{
+	display: block;
+	text-align: center;
+	margin-top: 30px;
+	color: #007AFF;
+}
+
+h4{
+	display: inline;
+	text-align: center;
+	margin-left: 500px;
+}
+h3{
+	display: inline;
+	margin-left: 40px;
+}
+
+#addTitle{
+	margin-top: 100px;
+	display: block;
+	text-align: center;
+	color: #4CD964;
+}
+#upMain{
+	margin-top: 50px;
+	display: block;
+	text-align: center;
+}
+#addBtn{
+	width: 300px;
+	height: 35px;
+	border: 1px solid #333333;
+	background: #007AFF;
+	color: white;
+	font-size: 15px;
+}
+#addBtn:hover{
+	background: #0062CC;
+}

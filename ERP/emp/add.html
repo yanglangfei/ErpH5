@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../css/emplist.css" />
+		<script type="text/javascript" src="../js/jquery-1.11.0.js" ></script>
+		<script src="../js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var addUrl = "http://192.168.1.134:8080/Erp/addEmployee";
+				var man=document.getElementById("man");
+				var woman=document.getElementById("woman");
+				var sex;
+				if(man.checked='checked'){
+					sex=1;
+				}else{
+					sex=2;
+				}
+				//设置颜色
+				var tr = document.getElementsByTagName("tr");
+				for(var i = 0; i < tr.length; i++) {
+					var td = tr[i].getElementsByTagName("td")[0];
+					td.style.background = "#4CD964";
+				}
+
+				$("#addBtn").click(
+					function() {
+						//提交数据
+						$.ajax({
+							type: "post",
+							url: addUrl,
+							async: true,
+							data: {
+								no:$("#empNo").val(),
+								name:$("#empName").val(),
+								weight:$("#weight").val(),
+								homeAddress:$("#homePlace").val(),
+								localAddress:$("#localPlace").val(),
+								scoreId:$("#score").val(),
+								joinDate:$("#joinDate").val(),
+								birth:$("#birth").val(),
+								teamId:$("#teamId option:selected").val(),
+								delop:$("#depId option:selected").val(),
+								sex:sex
+							},
+							dataType: 'json',
+							success: function(data) {
+								if(data.resultCode==0){
+									alert("添加成功");
+									history.go(-1);
+								}else{
+									alert("添加失敗");
+								}
+							},
+							error: function(e) {
+
+							}
+						});
+
+					}
+
+				)
+
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<h3 id="addTitle">新增员工信息</h3>
+		<div id="upMain">
+
+			<table>
+				<tr>
+					<td>员工编号</td>
+					<td><input type="text" id="empNo" /></td>
+				</tr>
+				<tr>
+					<td>员工姓名</td>
+					<td><input type="text" id="empName"/></td>
+				</tr>
+
+				<tr>
+					<td>性&nbsp;&nbsp;别</td>
+					<td>
+						<input type="radio" name="sex" id="man" checked="checked"/>男
+						<input type="radio" name="sex" id="woman"/>女
+					</td>
+				</tr>
+
+				<tr>
+					<td>体&nbsp;&nbsp;重</td>
+					<td><input type="text" id="weight"/></td>
+				</tr>
+				<tr>
+					<td>出生日期</td>
+					<td><input type="date" id="birth"/></td>
+				</tr>
+				<tr>
+					<td>家庭住址</td>
+					<td><input type="text" id="homePlace"/></td>
+				</tr>
+				<tr>
+					<td>暂居地</td>
+					<td><input type="text" id="localPlace"/></td>
+				</tr>
+				<tr>
+					<td>个人头像</td>
+					<td><input type="file" id="face"/></td>
+				</tr>
+				<tr>
+					<td>入职时间</td>
+					<td><input type="date" id="joinDate"/></td>
+				</tr>
+				<tr>
+					<td >所在部门</td>
+					<td>
+						<select id="depId">
+							<option value="1">技术部</option>
+							<option value="2">业务部</option>
+							<option value="3">客服部</option>
+							<option value="4">维修部</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>业绩考核</td>
+					<td><input type="text" id="score"/></td>
+				</tr>
+				<tr>
+					<td >所属团队</td>
+					<td>
+						<select id="teamId">
+							<option value="1">A团队</option>
+							<option value="2">B团队</option>
+							<option value="3">C团队</option>
+							<option value="4">D团队</option>
+						</select>
+
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<button id="addBtn">提交</button>
+					</td>
+
+				</tr>
+			</table>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,27 @@
+#uName{
+	text-align: center;
+	display: block;
+	margin: 10% 0 0 0;
+}
+#pwd{
+	text-align: center;
+	display: block;
+	margin: 10px 0 0 0;
+}
+#loginBtn{
+	text-align: center;
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	width: 200px;
+	padding: 3px;
+}
+#systitle{
+	text-align: center;
+	display: block;
+	margin-top: 100px;
+	color: green;
+}
+a{
+	text-decoration: none;
+}

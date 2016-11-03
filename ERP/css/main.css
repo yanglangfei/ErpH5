@@ -1,0 +1,21 @@
+li{
+	list-style-type: none;
+	padding: 20px;
+	border: 1px #2AC845 solid;
+}
+ul{
+	margin-top: 100px;
+	width: 150px;
+	margin-left: 0;
+	padding: 0;
+}
+ul a{
+	text-decoration:none ;
+	color: black;
+}
+
+a :hover{
+	background: #2AC845;
+	font-size: 21px;
+}
+
