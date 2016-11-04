@@ -3,7 +3,8 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>员工列表</title>
+		<link rel="shortcut icon" href="../img/u.jpg" type="img" />
 		<link rel="stylesheet" href="../css/emplist.css" />
 		<script src="../js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
 		<script>
@@ -37,7 +38,7 @@
 									"<td align='center'>" + array[i].delop + "</td>" +
 									"<td align='center'>" + array[i].score + "</td>" +
 									"<td align='center'>" + array[i].team + "</td>" +
-									"<td align='center'><a class='delete' tag=" + array[i].id + " href=''>删除</a>   <a href='update.html'>修改</a></td>";
+									"<td align='center'><a class='delete' tag=" + array[i].id + " href=''>删除</a>   <a href='update.html?"+array[i].id+"'>修改</a></td>";
 								ele.innerHTML = dataStr;
 								main.appendChild(ele);
 							}
