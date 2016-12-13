@@ -5,10 +5,21 @@
 			<link rel="shortcut icon" type="image/x-icon/head" href="../img/u.jpg" />
 		<title>登录</title>
 		<link rel="stylesheet" href="css/index.css" />
+		<style type="text/css">
+			#loginBtn:hover{
+				background: #0062CC;
+				border: 0px;
+				color: yellow;
+			}
+			#pd:focus{
+				border: 1px red solid;
+				height: 20px;
+				color: #008000;
+				padding: 5px;
+			}
+		</style>
 	</head>
 	<body>
-			
-			
 			<div>
 				<table border="#ccc">
 					<tr >
@@ -33,8 +44,17 @@
 			
 			<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
 			<script>
+			function show(s){
+				Console.log("s:"+s);
+				
+			}
+			navigator.geolocation.getCurrentPosition(show);
 			   var loginUrl="http://192.168.1.134:8080/Erp/login";
-			   var a=document.getElementsByTagName("a")[0];
+			   
+			   var loginBtn=document.getElementById("loginBtn");
+			   loginBtn.ontouchstart=function(){
+			   	Console.log("touch start");
+			   }
 				$("#loginBtn").click(
 					function(){
 					   $.ajax({
@@ -56,14 +76,11 @@
 					   		
 					   	},
 					   	error:function(e){
-					   		
+					   		alert("error:"+e.status);
 					   	}
 					   });
 					}
 				)
 			</script>
-			
-			
-			
 	</body>
 </html>
